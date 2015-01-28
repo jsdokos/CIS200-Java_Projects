@@ -11,18 +11,18 @@ import java.text.*;
 
 public class Proj1_Part1 
 {
-
+	static double rate = .02; //2% financing
+	static int term = 6; // amount of time in months
+	
 	public static void main(String[] args) 
 	{
-		double rate = .02; //2% financing
-		int term = 6; // amount of time in months
 		double price;
-		boolean error = true;
+		boolean error = true; // boolean to describe if there is an error in the program
 		
 		Scanner s = new Scanner(System.in); //used to read in data
 		DecimalFormat df = new DecimalFormat("#0.00"); // format for displaying final value 
 		
-		while(error)
+		while(error) // assume that there is an error until proven false
 		{
 			System.out.print("Enter the amount of the purchase: ");
 				price = Double.parseDouble(s.nextLine());
@@ -30,7 +30,6 @@ public class Proj1_Part1
 				if (price <= 0.0)
 				{
 					System.out.println("ERROR!, Please enter an amount greater than 0.");
-					System.out.println("\n\n\n\n\n\n\n\n\n"); // add more new lines
 				}	
 				else
 				{	
