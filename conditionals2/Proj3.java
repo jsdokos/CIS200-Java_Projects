@@ -1,45 +1,40 @@
+/*************************************************************************************************************
+* Proj3.java
+* Jacob Dokos CIS200 - 02L
+* 
+*
+* gets 2 points on graph and then displays them and calculates the slope
+* Extra credit was completed in this assignment
+**************************************************************************************************************/ 
+
 import java.text.DecimalFormat;
 import java.util.Scanner;
-
-
-
-
-
-//TODO loop program until user quits
-//TODO header of file
 
 public class Proj3 {
 
 	public static void main(String[] args) 
 	{
-		boolean rerunprog = true;
+		boolean rerunprog = true; // boolean for the program to know if it needs to rerun
 		do
 		{
-			// TODO change back to 0
+			// input variables
 			int x1 = 0;
 			int y1 = 0;
 			int x2 = 0;
 			int y2 = 0;
 			
-			//translated variables DELETE
-			/*int x1trans = 0;
-			int y1trans = 0;
-			int x2trans = 0;
-			int y2trans = 0;*/
-	
-			int rownum = 9;
-			int[] y_array = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-			int[] x_array = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
-			double slope  = 0;
-			double y_intercept = 0;
-			boolean input_error = false;
+			int rownum = 9; // used to display row and column numbers
+			int[] y_array = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0}; // array used as a lookup table for where to put the '*' on the 2d array
+			int[] x_array = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19}; //when x == 0 then you go to the 0 element of the array 
+			double slope  = 0; // used to store slope
+			double y_intercept = 0; //used to store the y intercept
+			boolean input_error = false; // denotes whether there is an error with the input from the user
 			
 			DecimalFormat df = new DecimalFormat("#0.00");
 			Scanner s = new Scanner(System.in);
 			do
 			{
 				//getting input from user
-				//TODO implement error checking
 				System.out.print("Enter x1: ");
 				x1 = Integer.parseInt(s.nextLine());
 				
@@ -52,6 +47,7 @@ public class Proj3 {
 				System.out.print("Enter y2: ");
 				y2 = Integer.parseInt(s.nextLine());
 				
+				//prints elements for the error depending on the situation
 				if (x1 == x2 && y1 == y2)
 				{
 					System.out.println("Point values must be different. \n");
@@ -94,13 +90,13 @@ public class Proj3 {
 			System.out.println("\ny = " + df.format(slope) + "x + " + df.format(y_intercept) + "\n");
 	
 	
-			String[][] table = new String[11][20];
+			String[][] table = new String[11][20]; // array for the graph
 			
 			for (int i = 0; i < 11; i++)
 			{
 				for (int j = 0; j < 20; j++)
 				{
-				
+					//initalizes the array with all elements
 					if (j == 0 && rownum != -1)
 						table[i][j] = String.valueOf(rownum--); // converts to string
 					else if (j == 1 && i < 9)
@@ -108,17 +104,15 @@ public class Proj3 {
 					else if (i == 9 && j > 1)
 						table[i][j] = "-"; // formatting for lower level
 					else if (i == 10 && j % 2 == 1)
-						table[i][j] = String.valueOf(1 + rownum++);
+						table[i][j] = String.valueOf(1 + rownum++); // used for column formatting
 					else if (i == 10 && j % 2 == 0)
-						table[i][j] = " ";
+						table[i][j] = " "; // provides spaces for column row
 					else
-						table[i][j] = (" ");
+						table[i][j] = (" "); // does space for everything else
 					
-					//table[i][j] = ("(" + i + "," + j + ") ");
-					
+					// outputs the star to it's rightful place
 					if(i == y_array[y1] && j == x_array[x1])
 						table[i][j] = "*";			
-	
 					
 					if(i == y_array[y2] && j == x_array[x2])
 						table[i][j] = "*";
@@ -134,9 +128,9 @@ public class Proj3 {
 		
 			String struserin = " ";
 			
-			System.out.print("\nRun program again? (y/n) ");
-			
-			struserin = s.nextLine();
+			//gets input from user if they want to continue program
+			System.out.print("\nRun program again? (y/n) ");		
+				struserin = s.nextLine();
 			
 			if (struserin.charAt(0) == 'Y' || struserin.charAt(0) == 'y')
 			{
