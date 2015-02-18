@@ -22,7 +22,7 @@ public class Proj3 {
 			int y1 = 0;
 			int x2 = 0;
 			int y2 = 0;
-			
+
 			int rownum = 9; // used to display row and column numbers
 			int[] y_array = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0}; // array used as a lookup table for where to put the '*' on the 2d array
 			int[] x_array = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19}; //when x == 0 then you go to the 0 element of the array 
