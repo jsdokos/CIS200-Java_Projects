@@ -1,51 +1,94 @@
-			// y1 lookup table
-			/*if (y1 == 0)
-				y1trans = 9;
-			else if (y1 == 1)
-				y1trans = 8;
-			else if (y1 == 2)
-				y1trans = 7;
-			else if (y1 == 3)
-				y1trans = 6;
-			else if (y1 == 4)
-				y1trans = 5;
-			else if (y1 == 5)
-				y1trans = 4;
-			else if (y1 == 6)
-				y1trans = 3;
-			else if (y1 == 7)
-				y1trans = 2;
-			else if (y1 == 8)
-				y1trans = 1;
-			else if (y1 == 9)
-				y1trans = 0;
+		for (int i = 0; i < hand.length; i++)
+		{
+			switch(hand[i][0]) 
+			{
+				case 0:
+					System.out.print("Ace");
+					break;
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+				case 9:
+					System.out.print(hand[i][0] + " ");
+					break;
+				case 10:
+					System.out.print("Jack");
+					break;
+				case 11:
+					System.out.print("Queen");
+					break;
+				case 12:
+					System.out.print("King");
+					break;
+			}
 			
-			//x1 lookup table
-			if(x1 == 0)
-				x1trans = 1;
-			else if (x1 == 1)
-				x1trans = 3;
-			else if (x1 == 2)
-				x1trans = 5;
-			else if (x1 == 3)
-				x1trans = 7;
-			else if (x1 == 4)
-				x1trans = 9;
-			else if (x1 == 5)
-				x1trans = 11;
-			else if (x1 == 6)
-				x1trans = 13;
-			else if (x1 == 7)
-				x1trans = 15;
-			else if (x1 == 8)
-				x1trans = 17;
-			else if (x1 == 9)
-				x1trans = 19;*/
+			switch(hand[i][1])
+			{
+			case 0:
+				System.out.println(" of Clubs");
+				break;
+			case 1:
+				System.out.println(" of Diamonds");
+				break;
+			case 2:
+				System.out.println(" of Hearts");
+				break;
+			case 3:
+				System.out.println(" of Spades");
+				break;
+			}
 				
-				
-				
-				if(i == y_array[y1] && j == x_array[x1] && x1 != x2)
-					table[i][j] = "*";
-				else
-					System.out.println("Line between points must have a slope\n(i.e x1 and x2 must differ");				
-				
+
+		}
+		
+		
+		
+					switch(hand[i][0]) 
+			{
+				case 0:
+					str_card = "Ace";
+					break;
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+				case 6:
+				case 7:
+				case 8:
+				case 9:
+					str_card = Integer.toString(hand[i][0]);
+					break;
+				case 10:
+					str_card = "Jack";
+					break;
+				case 11:
+					str_card = "Queen";
+					break;
+				case 12:
+					str_card = "King";
+					break;
+				default:
+					str_card = "?";
+			}
+			
+			switch(hand[i][1])
+			{
+			case 0:
+				System.out.println(str_card + " of Clubs");
+				break;
+			case 1:
+				System.out.println(str_card + " of Diamonds");
+				break;
+			case 2:
+				System.out.println(str_card + " of Hearts");
+				break;
+			case 3:
+				System.out.println(str_card + " of Spades");
+				break;
+			}
