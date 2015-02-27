@@ -92,3 +92,6 @@
 				System.out.println(str_card + " of Spades");
 				break;
 			}
+			
+			str_card[i] = "Ace";
+			break;
