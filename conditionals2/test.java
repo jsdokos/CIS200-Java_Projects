@@ -1,26 +1,18 @@
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class test 
 {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws IOException 
 	{
+		int[] hello = {1, 0};
 		
-		Scanner s = new Scanner(System.in);
-		double price;
+		System.out.println(hello.length);
+	
 		
-		do
-		{
-			price = Double.parseDouble(s.nextLine());
-			
-			if (price <= 0 || price >= 1000)
-			{
-				System.out.println("Invlaid input\nPlease re-enter a price");
-			}
-			
-		}
-		while (price <= 0 || price >= 1000);
 	} 
 } 
 

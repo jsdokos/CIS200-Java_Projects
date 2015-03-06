@@ -1,97 +1,41 @@
-		for (int i = 0; i < hand.length; i++)
-		{
-			switch(hand[i][0]) 
-			{
-				case 0:
-					System.out.print("Ace");
-					break;
-				case 1:
-				case 2:
-				case 3:
-				case 4:
-				case 5:
-				case 6:
-				case 7:
-				case 8:
-				case 9:
-					System.out.print(hand[i][0] + " ");
-					break;
-				case 10:
-					System.out.print("Jack");
-					break;
-				case 11:
-					System.out.print("Queen");
-					break;
-				case 12:
-					System.out.print("King");
-					break;
-			}
-			
-			switch(hand[i][1])
-			{
-			case 0:
-				System.out.println(" of Clubs");
-				break;
-			case 1:
-				System.out.println(" of Diamonds");
-				break;
-			case 2:
-				System.out.println(" of Hearts");
-				break;
-			case 3:
-				System.out.println(" of Spades");
-				break;
-			}
-				
 
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+
+public class test 
+{
+
+	public static void main(String[] args) throws IOException 
+	{
+		
+		Scanner s_file = new Scanner(new File("life2.txt"));
+		int size1, size2;
+		
+		// getting the file size
+		size1 = Integer.parseInt(s_file.nextLine());
+		s_file.nextLine();
+		size2 = Integer.parseInt(s_file.nextLine());
+		s_file.nextLine();
+		
+		int[][] cells = new int[size1][size2];
+			
+		String line;
+		//translate the file to an array
+		for (int i = 0; s_file.hasNextLine(); i++)
+		{
+			line = s_file.nextLine();
+			
+			if (i > 0)
+				System.out.println();
+			for(int j = 0; j < size2; j++)
+			{
+				cells[i][j] = Character.getNumericValue(line.charAt(j));
+				System.out.print(cells[i][j]);
+			}
 		}
 		
 		
-		
-					switch(hand[i][0]) 
-			{
-				case 0:
-					str_card = "Ace";
-					break;
-				case 1:
-				case 2:
-				case 3:
-				case 4:
-				case 5:
-				case 6:
-				case 7:
-				case 8:
-				case 9:
-					str_card = Integer.toString(hand[i][0]);
-					break;
-				case 10:
-					str_card = "Jack";
-					break;
-				case 11:
-					str_card = "Queen";
-					break;
-				case 12:
-					str_card = "King";
-					break;
-				default:
-					str_card = "?";
-			}
-			
-			switch(hand[i][1])
-			{
-			case 0:
-				System.out.println(str_card + " of Clubs");
-				break;
-			case 1:
-				System.out.println(str_card + " of Diamonds");
-				break;
-			case 2:
-				System.out.println(str_card + " of Hearts");
-				break;
-			case 3:
-				System.out.println(str_card + " of Spades");
-				break;
-			}
-			
-			str_card[i] = "Ace";
-			break;
+	} 
+} 
+
