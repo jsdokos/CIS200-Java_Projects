@@ -1,18 +1,26 @@
 
-import java.io.File;
-import java.io.IOException;
 import java.util.*;
-
 public class test 
 {
 
-	public static void main(String[] args) throws IOException 
+	public static void main(String[] args) 
 	{
-		int[] hello = {1, 0};
 		
-		System.out.println(hello.length);
-	
+		Scanner s = new Scanner(System.in);
+		double total = Double.parseDouble(s.nextLine());
+		int day = Integer.parseInt(s.nextLine());
 		
-	} 
+		s.close();
+		
+		total *= 7;
+		total -= 1;
+		total *= 13;
+		total += day;
+		total *= 11;
+		
+		
+		
+		
+	}
 } 
 
