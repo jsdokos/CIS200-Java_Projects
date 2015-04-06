@@ -16,6 +16,7 @@ public class proj4
 
 	public static void main(String[] args) 
 	{
+		//TODO evenually use a method to do this
 		Scanner s = new Scanner(System.in);
 		boolean rerunprog = true; // boolean for the program to know if it needs to rerun
 		do

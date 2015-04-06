@@ -1,41 +1,27 @@
-
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
-
-public class test 
-{
-
-	public static void main(String[] args) throws IOException 
+	private static void bubbleSort(int num)
 	{
-		
-		Scanner s_file = new Scanner(new File("life2.txt"));
-		int size1, size2;
-		
-		// getting the file size
-		size1 = Integer.parseInt(s_file.nextLine());
-		s_file.nextLine();
-		size2 = Integer.parseInt(s_file.nextLine());
-		s_file.nextLine();
-		
-		int[][] cells = new int[size1][size2];
-			
-		String line;
-		//translate the file to an array
-		for (int i = 0; s_file.hasNextLine(); i++)
+		//TODO fix this shit's broken
+		//doesn't actually swap everything
+		//make a method to switch all the information
+		Student temp = new Student();
+		boolean swap = true;
+		do
 		{
-			line = s_file.nextLine();
-			
-			if (i > 0)
-				System.out.println();
-			for(int j = 0; j < size2; j++)
+			swap = false;
+			for (int i = 0; i < num - 1; i++)
 			{
-				cells[i][j] = Character.getNumericValue(line.charAt(j));
-				System.out.print(cells[i][j]);
+				if (stud_list[i].getOverall() < stud_list[i+1].getOverall())
+				{
+					//stud_list[i]
+					temp.setOverall(stud_list[i].getOverall());
+					stud_list[i].setOverall(stud_list[i+1].getOverall());
+					stud_list[i + 1].setOverall(temp.getOverall());	
+					swap = true;
+				}
 			}
 		}
+		while (swap);
 		
-		
-	} 
-} 
 
+					
+	}

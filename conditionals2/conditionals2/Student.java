@@ -2,6 +2,16 @@ package conditionals2;
 
 import java.text.DecimalFormat;
 
+/*************************************************************************************************************
+* Calculates a grade for a student based on a given score and a amount of points able to be earned. Then sorts all students
+* by overall score.
+* 
+* Jacob Dokos
+* 
+* Proj7.java
+* 
+**************************************************************************************************************/ 
+
 public class Student 
 {
 	private String first;
@@ -14,9 +24,9 @@ public class Student
 	private double final_exam;
 	private double overall;
 	
-	private static double labProj_adj = .15;
-	private static double allExam_adj = .30;
-	private static double codeLab_adj = .10;
+	private final double labProj_adj = .15;
+	private final double allExam_adj = .30;
+	private final double codeLab_adj = .10;
 	
 	public static double totalLabs;
 	public static double totalProj;
@@ -24,7 +34,7 @@ public class Student
 	public static double totalCode;
 	public static double totalFinal;
 	
-	
+
 	public Student()
 	{
 		first = "no name entered";
@@ -88,14 +98,30 @@ public class Student
 		else
 			System.out.println("How did you get here?");
 		
-		
-		
 		String student_ret = ("\nStudent Name: " + last + ", " + first + 
 				"\nWID: " + wid +
 				"\nOverall %: " + df.format(overall) + "%" + 
-				"\n Final Grade: " + letGrade);
+				"\nFinal Grade: " + letGrade);
 			
 		return student_ret;
 	}
+	
+	public double getOverall()
+	{
+		return overall;
+	}
+	
+	public void setOverall(double newOver)
+	{
+		if (newOver >= 0)
+		overall = newOver;
+		else
+			return;
+	}
 
+
+	
+	
+	
+	
 }
