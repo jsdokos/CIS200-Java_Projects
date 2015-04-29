@@ -47,7 +47,7 @@ public class proj5
 			{
 				try 
 				{
-					Thread.sleep(300);
+					Thread.sleep(500);
 				}
 				catch (InterruptedException e) {}
 	
@@ -110,7 +110,7 @@ public class proj5
 			for(int j = 0; j < size2; j++)
 			{
 				if (cells[i][j] == 0)
-					board += ".";
+					board += " ";
 				else if (cells[i][j] == 1)
 					board += "*";
 				else 

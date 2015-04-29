@@ -3,13 +3,12 @@ package conditionals2;
 import java.text.DecimalFormat;
 
 /*************************************************************************************************************
-* Calculates a grade for a student based on a given score and a amount of points able to be earned. Then sorts all students
-* by overall score.
-* 
-* Jacob Dokos
-* 
-* Proj7.java
-* 
+* Student.java - Project 7
+* Jacob Dokos CIS200 - 02L
+* Extra credit wasattempted.
+*
+* Used to store information about a student. Stores their first, last name and wid along with all grades. 
+* There is also a static variable that stores the total points possible for all the students.
 **************************************************************************************************************/ 
 
 public class Student 
@@ -28,13 +27,20 @@ public class Student
 	private final double allExam_adj = .30;
 	private final double codeLab_adj = .10;
 	
+	//used by the entire class to know what the total score is.
 	public static double totalLabs;
 	public static double totalProj;
 	public static double totalExam;
 	public static double totalCode;
 	public static double totalFinal;
 	
-
+	/*************************************************************************************************************
+	* Description: The default constructor for the student class. Used if the person want to create a blank student.
+	* 
+	* Parameters: none.
+	* 
+	* Return: none.
+	**************************************************************************************************************/ 
 	public Student()
 	{
 		first = "no name entered";
@@ -48,6 +54,22 @@ public class Student
 		overall = 0;		
 	}
 	
+	/*************************************************************************************************************
+	* Description: Constructor for the class when the student enters all data points. Used to set the variables equal to the 
+	* class variables.
+	* 
+	* Parameters:
+	* fir - The first name of the student
+	* las - The last name of a student
+	* stud_wid - The student's WID
+	* lab_score - Score on labs
+	* project_score - Score on projects
+	* exam_score - Exams scores
+	* codelab_score - Codelab score
+	* fina_exam_score - Final exam score
+	* 
+	* Return: None.
+	**************************************************************************************************************/ 
 	public Student(String fir, String las, String stud_wid, double lab_score, double project_score, double exam_score, double codelab_score, double final_exam_score)
 	{
 		first = fir;
@@ -62,6 +84,15 @@ public class Student
 		
 	}
 	
+	/*************************************************************************************************************
+	* Description: Used to calculate the overall grade of a student based on the total points possible and
+	* the student's score.
+	* 
+	* Parameters: None.
+	* 
+	* Return: 
+	* Ruturns the students overall score.
+	**************************************************************************************************************/ 
 	private double calcOverall()
 	{
 		double totalPointsPossible = totalLabs + totalProj + totalExam + totalCode + totalFinal;
@@ -78,6 +109,15 @@ public class Student
 		return ((total  / totalPointsPossible ) * 100);
 	}
 	
+	/*************************************************************************************************************
+	* Description: Displays all the information about the student is an ordered list. Calculates the letter
+	* grade based on the students overall score
+	* 
+	* Parameters: None.
+	* 
+	* Return:
+	* student_ret - the string that will be printed when this function is called. Show's all information about a student.
+	**************************************************************************************************************/ 
 	public String toString()
 	{
 		DecimalFormat df = new DecimalFormat("#0.0"); 
@@ -106,17 +146,17 @@ public class Student
 		return student_ret;
 	}
 	
+	/*************************************************************************************************************
+	* Description: Gets the overall score without letting the program change it.
+	* 
+	* Parameters: None.
+	* 
+	* Return:
+	* overall - returns the overall score for the object.
+	**************************************************************************************************************/ 
 	public double getOverall()
 	{
 		return overall;
-	}
-	
-	public void setOverall(double newOver)
-	{
-		if (newOver >= 0)
-		overall = newOver;
-		else
-			return;
 	}
 
 

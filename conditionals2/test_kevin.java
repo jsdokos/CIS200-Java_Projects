@@ -3,26 +3,17 @@ public class test_kevin {
 
 	public static void main(String[] args) 
 	{
-		
-		System.out.println("                           _________");
-		System.out.println("                         /         /.");
-		System.out.println("  .-------------.       /_________/ |");
-		System.out.println(" /             / |      |         | |");
-		System.out.println("/+============+\\ |      | |====|  | |");
-		System.out.println("||C:\\>        || |      |         | |");
-		System.out.println("||            || |      | |====|  | |");
-		System.out.println("||            || |      |   ___   | |");
-		System.out.println("||            || |      |  |166|  | |");
-		System.out.println("||            ||/@@@    |   ---   | |");
-		System.out.println("\\+============+/    @   |_________|./.");
-		System.out.println("                   @          ..  ....'");
-		System.out.println("  ..................@     __.'.'  ''");
-		System.out.println(" /oooooooooooooooo//     ///");
-		System.out.println("/................//    /_/");
-		System.out.println("------------------");
-
-		
-		System.out.println("\\");
+		int temp = 0;
+		int num2 = 1;
+		do
+		{
+			System.out.print(temp + " ");
+			temp += num2;
+			System.out.print(num2 + " ");
+			num2 += temp;
+			
+		}
+		while (num2 < 100000);
 	}
 	
 }
